@@ -1,4 +1,3 @@
-Program.cs
 # Created by https://www.toptal.com/developers/gitignore/api/rider,jetbrains,intellij,vs,csharp,jspm
 # Edit at https://www.toptal.com/developers/gitignore?templates=rider,jetbrains,intellij,vs,csharp,jspm
 
@@ -805,3 +804,4 @@ coverage*[.json, .xml, .info]
 /.idea/.idea.ClashOfCode.dir/.idea/vcs.xml
 /.idea/.idea.ClashOfCode.dir/.idea/.gitignore
 /.idea/.idea.ClashOfCode/.idea/.gitignore
+/.idea/.idea.ClashOfCode/.idea/git_toolbox_prj.xml
