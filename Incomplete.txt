@@ -1,0 +1,261 @@
+using System;
+using System.Linq;
+using System.IO;
+using System.Text;
+using System.Collections;
+using System.Collections.Generic;
+
+/**
+ * Auto-generated code below aims at helping you parse
+ * the standard input according to the problem statement.
+ **/
+class Solution
+{
+    static void Main(string[] args)
+    {
+        int A = int.Parse(Console.ReadLine());
+        int B = int.Parse(Console.ReadLine());
+        int sum = 0;
+
+        // for (int i = A; i <= B; i++)
+        // {
+        //     if (i.ToString().Distinct().Count() == 1) sum ++;
+        // }
+        sum = Enumerable.Range(A, B - A+1).Where(x => x.ToString().Distinct().Count() == 1).Count();
+        
+        Console.WriteLine(sum);
+    }
+}
+
+// A positive integer is considered uniform if all of its digits are equal. For example, 666 is uniform, while 667 is not.
+// Given two positive integers A and B, determine the number of uniform integers between A and B.
+
+// 111111111
+// 999999999
+// rez 9
+// Time out.
+
+/*
+Python only 1 correct.
+def ugen():
+    yield 0
+    l = 1
+    while True:
+        for d in range(1,10):
+            yield int(str(d) * l)
+        l += 1
+
+
+a = int(input())
+b = int(input())
+
+g = ugen()
+while True:
+    s = next(g)
+    if s >= a:
+        break
+
+res = 0
+while s <= b:
+    res += 1
+    s = next(g)
+
+print(res)
+*/
+
+
+=============================================
+
+
+using System;
+using System.Linq;
+using System.IO;
+using System.Text;
+using System.Collections;
+using System.Collections.Generic;
+
+/**
+ * Auto-generated code below aims at helping you parse
+ * the standard input according to the problem statement.
+ **/
+class Solution
+{
+    static void Main(string[] args)
+    {
+        string[] inputs;
+        inputs = Console.ReadLine().Split(' ');
+        int width = int.Parse(inputs[0]);
+        int height = int.Parse(inputs[1]);
+        inputs = Console.ReadLine().Split(' ');
+        int x1 = int.Parse(inputs[0]);
+        int y1 = int.Parse(inputs[1]);
+        inputs = Console.ReadLine().Split(' ');
+        int x2 = int.Parse(inputs[0]);
+        int y2 = int.Parse(inputs[1]);
+        for (int i = 0; i < height; i++)
+        {
+
+            // Write an answer using Console.WriteLine()
+            // To debug: Console.Error.WriteLine("Debug messages...");
+
+            Console.WriteLine(".....");
+        }
+    }
+}
+
+
+
+
+
+
+
+
+Draw the border of a rectangle according to its top-left x1,y1 and bottom-right coordinates x2,y2. The sides are parallel to the axes.
+
+The drawing area is represented by a grid of characters of size width and height. When a pixel is painted, it contains "#" and otherwise "."
+
+Note that the rectangle may be outside of the drawing area.
+Input
+Line 1: width and height of the drawing area. The top-left coordinate of the whole drawing area is (0,0).
+Line 2: The top-left x1,y1 and bottom-right x2,y2 coordinates of the rectangle.
+Output
+height lines: the grid of characters without spaces
+Constraints
+2 <= width <= 100
+2 <= height <= 100
+-100 <= xn <= 200
+-100 <= yb <= 200
+x1 <= x2
+y1 <= y2
+
+Example
+
+Input
+30 10
+5 5
+29 8
+
+Output
+..............................
+..............................
+..............................
+..............................
+..............................
+.....#########################
+.....#.......................#
+.....#.......................#
+.....#########################
+..............................
+
+10 5
+3 2
+3 2
+..........
+..........
+...#......
+..........
+..........
+
+20 8
+-10 -8
+-1 8
+....................
+....................
+....................
+....................
+....................
+....................
+....................
+....................
+
+30 10
+15 5
+45 15
+..............................
+..............................
+..............................
+..............................
+..............................
+...............###############
+...............#..............
+...............#..............
+...............#..............
+...............#..............
+
+=========================================================================================================================================
+
+Given a number n and a sentence made of several words, you must ouput the nth unique word from that sentence.
+A word is considered unique only the first time it appears in the sentence. The same word which appears later in the sentence is not considered unique.
+Words may contain uppercase letters, which must be considered the same way as lowercase letters, and may contain commas or dots, which must be ignored.
+
+If a word is a contraction (like "don't", "isn't", or "you'd"), it must be considered as a single word.
+
+Input
+Line 1: an integer n.
+Line 2: a sentence made of several words, separated by spaces and/or punctuation (dots or commas).
+
+Output
+Line 1: the nth unique word from sentence, without punctuation, and lowercased.
+Constraints
+1 ≤ n ≤ number of unqiue words in sentence
+
+Example
+
+Input
+3
+Wake, Work, Eat, Sleep, Repeat.
+
+Output
+eat
+
+
+
+
+using System;
+using System.Linq;
+using System.IO;
+using System.Text;
+using System.Collections;
+using System.Collections.Generic;
+
+/**
+ * Auto-generated code below aims at helping you parse
+ * the standard input according to the problem statement.
+ **/
+ 
+class Solution
+{
+    static void Main(string[] args)
+    {
+        int n = int.Parse(Console.ReadLine()); // a number
+        string[] sentence = Console.ReadLine().Replace(",",string.Empty).Split(' ');
+
+        for (int i = n-1; i < sentence.Length; i++)
+        {
+            if (sentence[..i].Where(x=>x==sentence[i]).Count()==0)
+            {
+                Console.WriteLine(sentence[i].ToLower());
+                break;
+            }
+        }
+    }
+}
+
+
+
+
+8
+Everybody wants to go to heaven, but nobody wants to die.
+die
+
+15
+It is true that we do not know what we have got until we lose it, but it is also true that we do not know what we have been missing until it arrives.
+also
+
+15
+The only way to keep your health is to eat what you do not want, drink what you do not like, and do what you would rather not.
+drink
+
+3
+Wake, Work, Eat, Sleep, Repeat.
+eat

@@ -805,3 +805,5 @@ coverage*[.json, .xml, .info]
 /.idea/.idea.ClashOfCode.dir/.idea/.gitignore
 /.idea/.idea.ClashOfCode/.idea/.gitignore
 /.idea/.idea.ClashOfCode/.idea/git_toolbox_prj.xml
+/.idea/.idea.ClashOfCode/.idea/indexLayout.xml
+/.idea/.idea.ClashOfCode/.idea/vcs.xml
